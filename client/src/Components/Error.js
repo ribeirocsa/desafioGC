@@ -13,7 +13,7 @@ class ErrorComponent extends Component {
                     <h5>Please try again!</h5>
                 </div>
                     <Link to="/">
-                    <button className='btn btn-outline-primary mx-sm-3 mb-2 mt-5'>Go to home</button>
+                    <button className='btn btn-outline-dark mx-sm-3 mb-2 mt-5'>Go to home</button>
                 </Link>
             </div>
         )

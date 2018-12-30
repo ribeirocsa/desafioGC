@@ -32,10 +32,11 @@ module.exports = (app) => {
 
     app.get('/search-location-weather', (req, res) => {
 
-        //const API_KEY = process.env.OpenWeatherMap_API_KEY;
-        const API_KEY = '';
+        const API_KEY = process.env.API_KEY;
+        //const API_KEY = '';
         // build api URL with user city
         const baseUrl = 'http://api.openweathermap.org/data/2.5/weather?q=';
+        //const baseUrl = 'http://api.openwea7568thermap.org/data/weather?q=';
         const apiId = `&appid=${API_KEY}&units=metric`;
 
         const userLocation = (baseUrl, apiId, city) => {
@@ -63,7 +64,8 @@ module.exports = (app) => {
                 return data;
             })
             .catch(err => {
-                res.redirect('/error');
+                console.log('catch1: '+ err);
+
             });
 
 
@@ -74,7 +76,7 @@ module.exports = (app) => {
                 return data;
             })
             .catch(err => {
-                res.redirect('/error');
+                console.log('catch2: '+ err);
             });
 
         const apiRequest3 = fetch(apiUrl3)
@@ -84,7 +86,7 @@ module.exports = (app) => {
                 return data;
             })
             .catch(err => {
-                res.redirect('/error');
+                console.log('catch3: '+ err);
             });
 
         const combinedData = Promise.all([apiRequest1,apiRequest2,apiRequest3])
@@ -96,7 +98,21 @@ module.exports = (app) => {
                         combinedData["city2"] = city2;
                         combinedData["city3"] = city3;
 
+
                         res.send( combinedData );
+                })
+                .catch(err => {
+                    console.log('promise catch:' + err);
+
+                    res.redirect('/error');
                 });
+        /*process.on('unhandledRejection', (reason, combinedData) => {
+            console.log('Unhandled Rejection at:', reason.stack || reason)
+            // Recommended: send the information to sentry.io
+            // or whatever crash reporting service you use
+        });
+        combinedData.then((res) => {
+            return ('-----> ' + reportToUser(JSON.pasre(res))); // note the typo (`pasre`)
+        }); // no `.catch()` or `.then()`*/
     })
 };

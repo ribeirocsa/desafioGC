@@ -10,16 +10,14 @@ class App extends Component {
     render() {
         return (
             <BrowserRouter>
-
                 <div className='App'>
                     <Switch>
-
+                        <Route exact path='/' component={Home}/>
+                        <Route exact path='/current-weather' component={CurrentWeather}/>
                         <Route exact path='/error' component={ErrorComponent}/>
+
+                        <Route component={ErrorComponent} />
                     </Switch>
-
-                    <Route path='/' component={Home}/>
-                    <Route path='/current-weather' component={CurrentWeather}/>
-
                 </div>
             </BrowserRouter>
         )

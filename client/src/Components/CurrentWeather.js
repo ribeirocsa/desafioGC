@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import '../App.css';
-import Header from "./Header";
+import Home from "./Home";
+import ErrorComponent from "./Error";
 
 class CurrentWeather extends Component {
     constructor(props) {
@@ -25,74 +26,80 @@ class CurrentWeather extends Component {
             .then(res => res.json())
             .then(data => {
                 let invalidCities = [];
-                console.log(data.apiRequest1.cod);
-                console.log(data.apiRequest2.cod);
-                console.log(data.apiRequest3.cod);
-                this.setState({
-                    httpError: data.apiRequest1.cod
-                });
 
-
-                if(data.apiRequest1.cod === '404') {
+                if(data.apiRequest1 == null || data.apiRequest2 == null || data.apiRequest3 == null){
+                    //if any of the responses is undefined, we want to redirect to error component
                     this.setState({
-                        city1NotFound: '404'
+                        httpError: -1
                     });
-                    invalidCities.push(data.city1);
-                    console.log(data.city1 + " is invalid");
                 }
-                if(data.apiRequest2.cod === '404') {
+                else {
+
                     this.setState({
-                        city2NotFound: '404'
+                        httpError: data.apiRequest1.cod
                     });
-                    invalidCities.push(data.city2);
-                    console.log(data.city2 + " is invalid");
-                }
-                if(data.apiRequest3.cod === '404') {
-                    this.setState({
-                        city3NotFound: '404'
-                    });
-                    invalidCities.push(data.city3);
-                    console.log(data.city3 + " is invalid");
-                }
 
 
+                    if (data.apiRequest1.cod === '404') {
+                        this.setState({
+                            city1NotFound: '404'
+                        });
+                        invalidCities.push(data.city1);
+                        console.log(data.city1 + " is invalid");
+                    }
+                    if (data.apiRequest2.cod === '404') {
+                        this.setState({
+                            city2NotFound: '404'
+                        });
+                        invalidCities.push(data.city2);
+                        console.log(data.city2 + " is invalid");
+                    }
+                    if (data.apiRequest3.cod === '404') {
+                        this.setState({
+                            city3NotFound: '404'
+                        });
+                        invalidCities.push(data.city3);
+                        console.log(data.city3 + " is invalid");
+                    }
 
-                if (invalidCities.length > 0) {
-                    this.setState({
-                        invalidCities: invalidCities
-                    })
 
-                } else {
+                    if (invalidCities.length > 0) {
+                        this.setState({
+                            invalidCities: invalidCities
+                        })
 
-                    const convertUnixToTime = (myDate) => {
-                        // Convert sunrise unix time stamp to hour
-                        const time = new Date(0);
-                        time.setUTCSeconds(myDate);
-                        return time.toLocaleTimeString(myDate);
-                    };
+                    } else {
 
-                    // method to create a city (json object)
-                    const createCity = (req) => {
-                        return {
-                            name: req.name,
-                            sunrise: convertUnixToTime(req.sys.sunrise),
-                            sunset: convertUnixToTime(req.sys.sunset),
-                            temp: Math.round(req.main.temp),
-                            description: req.weather[0].description,
-                            icon: req.weather[0].icon
+                        const convertUnixToTime = (myDate) => {
+                            // Convert sunrise unix time stamp to hour
+                            const time = new Date(0);
+                            time.setUTCSeconds(myDate);
+                            return time.toLocaleTimeString(myDate);
                         };
-                    };
 
-                    const arrayCities = [
-                        createCity(data.apiRequest1),
-                        createCity(data.apiRequest2),
-                        createCity(data.apiRequest3)
-                    ];
+                        // method to create a city (json object)
+                        const createCity = (req) => {
+                            return {
+                                name: req.name,
+                                sunrise: convertUnixToTime(req.sys.sunrise),
+                                sunset: convertUnixToTime(req.sys.sunset),
+                                temp: Math.round(req.main.temp),
+                                description: req.weather[0].description,
+                                icon: req.weather[0].icon
+                            };
+                        };
 
-                    this.setState({
-                        cities: arrayCities
+                        const arrayCities = [
+                            createCity(data.apiRequest1),
+                            createCity(data.apiRequest2),
+                            createCity(data.apiRequest3)
+                        ];
+
+                        this.setState({
+                            cities: arrayCities
                         });
                     }
+                }
             })
             .catch(err => {
                 console.log(err);
@@ -101,6 +108,17 @@ class CurrentWeather extends Component {
     }
 
     render() {
+
+        //check if there was any error
+        if ( this.state.httpError === 401 || this.state.httpError === 500 || this.state.httpError === -1) {
+            console.log("error has been triggered: " + this.state.httpError)
+            return (
+                <div>
+                    <ErrorComponent/>
+                </div>
+            )
+        }
+
         if (this.state.invalidCities.length > 0) {
 
            let errorCities = '';
@@ -114,12 +132,10 @@ class CurrentWeather extends Component {
                 errorCities += "'" + this.state.invalidCities[i] + "'" ;
             }
             return (
-                <div className='cityError'>Cities {errorCities} were not recognized. Please insert a valid name.</div>
-            )
-        }
-        else if (this.state.httpError === 401) {
-            return (
-                <div> </div>
+                <div>
+                    <Home />
+                    <div className='cityError'>Cities {errorCities} were not recognized. Please insert a valid name.</div>
+                </div>
             )
         }
         else {
@@ -142,7 +158,8 @@ class CurrentWeather extends Component {
                 }, {
                     Header: 'Icon',
                     accessor: 'icon',
-                    Cell: props => <img src={`http://openweathermap.org/img/w/${props.value}.png`} alt='weather icon'></img>
+                    // Cell: props => <img src={`http://openweathermap.org/img/w/${props.value}.png`} alt='weather icon'></img>
+                    Cell: props => <img src={require(`../assets/weatherIcons/${props.value}.png`)} alt='weather icon'></img>
                 }, {
                     Header: 'Description',
                     accessor: 'description'
@@ -151,7 +168,7 @@ class CurrentWeather extends Component {
 
             return (
                 <div>
-                    <Header/>
+                    <Home/>
                     <div className='customTable mx-5 my-5'>
                         <ReactTable
                             data = {cities}
