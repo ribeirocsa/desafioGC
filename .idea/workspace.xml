@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a122461-d6a3-482b-bfcf-3ed697fce23a" name="Default Changelist" comment="Add client files to project">
-      <change afterPath="$PROJECT_DIR$/server/FindCity.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/controllers/controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/api/searchController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+    <list default="true" id="7a122461-d6a3-482b-bfcf-3ed697fce23a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +28,7 @@
           <entry key="env" value="2" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="2" />
-          <entry key="js" value="40" />
+          <entry key="js" value="41" />
           <entry key="json" value="4" />
           <entry key="png" value="2" />
         </counts>
@@ -42,7 +40,7 @@
           <entry key="HTML" value="2" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="40" />
+          <entry key="JavaScript" value="41" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -53,7 +51,7 @@
           <entry key="html" value="60" />
           <entry key="js" value="13269" />
           <entry key="json" value="25" />
-          <entry key="txt" value="32" />
+          <entry key="txt" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -62,7 +60,7 @@
           <entry key="HTML" value="60" />
           <entry key="JSON" value="25" />
           <entry key="JavaScript" value="13269" />
-          <entry key="PLAIN_TEXT" value="37" />
+          <entry key="PLAIN_TEXT" value="49" />
         </counts>
       </usages-collector>
     </session>
@@ -258,6 +256,26 @@
             <path>
               <item name="desafio" type="b2602c69:ProjectViewProjectNode" />
               <item name="desafio" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="desafio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="desafio" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="desafio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="desafio" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="desafio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="desafio" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -332,7 +350,7 @@
       <option name="presentableId" value="Default" />
       <updated>1545217605803</updated>
       <workItem from="1545217607365" duration="66000" />
-      <workItem from="1545217674496" duration="130453000" />
+      <workItem from="1545217674496" duration="130695000" />
     </task>
     <task id="LOCAL-00001" summary="Add client files to project">
       <created>1546182273356</created>
@@ -341,17 +359,45 @@
       <option name="project" value="LOCAL" />
       <updated>1546182273356</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add server files to project">
+      <created>1546182398707</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1546182398707</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add client files to project">
+      <created>1546182515992</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1546182515992</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add client files to project">
+      <created>1546182561452</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1546182561452</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add client files to project">
+      <created>1546182625756</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1546182625756</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130519000" />
+    <option name="totallyTimeSpent" value="130761000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="821" extended-state="6" />
     <layout>
       <window_info id="npm" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -363,7 +409,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32921812" />
+      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32921812" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32921812" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -379,6 +425,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add server files to project" />
     <MESSAGE value="Add client files to project" />
     <option name="LAST_COMMIT_MESSAGE" value="Add client files to project" />
   </component>
@@ -415,16 +462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/App2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -669,6 +706,16 @@
           <caret line="164" column="49" selection-start-line="164" selection-start-column="49" selection-end-line="164" selection-end-column="49" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/App2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
