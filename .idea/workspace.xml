@@ -1,30 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a122461-d6a3-482b-bfcf-3ed697fce23a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/01d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/01n.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/02d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/02n.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/03d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/03n.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/04d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/04n.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/09d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/09n.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/10d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/10n.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/11d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/11n.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/13d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/13n.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/50d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/weatherIcons/50n.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="7a122461-d6a3-482b-bfcf-3ed697fce23a" name="Default Changelist" comment="Env file working for">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CurrentWeather.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CurrentWeather.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Error.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/api/searchController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api/searchController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
@@ -47,44 +27,44 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="6" />
-          <entry key="env" value="3" />
-          <entry key="gitignore" value="1" />
+          <entry key="env" value="6" />
+          <entry key="gitignore" value="3" />
           <entry key="html" value="2" />
-          <entry key="js" value="44" />
+          <entry key="js" value="46" />
           <entry key="json" value="4" />
-          <entry key="png" value="3" />
+          <entry key="png" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key=".env file" value="3" />
+          <entry key=".env file" value="6" />
           <entry key="CSS" value="6" />
           <entry key="HTML" value="2" />
-          <entry key="Image" value="3" />
+          <entry key="Image" value="4" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="44" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="JavaScript" value="46" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="715" />
-          <entry key="env" value="4" />
+          <entry key="env" value="26" />
           <entry key="gitignore" value="5" />
           <entry key="html" value="60" />
-          <entry key="js" value="14223" />
+          <entry key="js" value="14283" />
           <entry key="json" value="25" />
-          <entry key="txt" value="56" />
+          <entry key="txt" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key=".env file" value="4" />
+          <entry key=".env file" value="26" />
           <entry key="CSS" value="715" />
           <entry key="HTML" value="60" />
           <entry key="JSON" value="25" />
-          <entry key="JavaScript" value="14223" />
-          <entry key="PLAIN_TEXT" value="61" />
+          <entry key="JavaScript" value="14283" />
+          <entry key="PLAIN_TEXT" value="106" />
         </counts>
       </usages-collector>
     </session>
@@ -92,37 +72,19 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/Components/CurrentWeather.js">
+        <entry file="file://$PROJECT_DIR$/server/routes/api/searchController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+            <state relative-caret-position="22">
+              <caret line="36" column="76" selection-start-line="36" selection-start-column="76" selection-end-line="36" selection-end-column="76" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/routes/api/searchController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
+        <entry file="file://$PROJECT_DIR$/server/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="26" selection-start-column="26" selection-end-column="26" />
+              <caret column="40" selection-start-column="40" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -130,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+            <state relative-caret-position="75">
+              <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -140,43 +102,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/routes/routes.js">
+        <entry file="file://$PROJECT_DIR$/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+            <state relative-caret-position="210">
+              <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/Components/Home.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="91" column="60" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="60" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/Components/Error.js">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
+              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -237,10 +175,11 @@
         <option value="$PROJECT_DIR$/client/src/Components/Home.js" />
         <option value="$PROJECT_DIR$/client/src/Components/Error.js" />
         <option value="$PROJECT_DIR$/client/src/App.js" />
-        <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/client/src/Components/CurrentWeather.js" />
-        <option value="$PROJECT_DIR$/server/routes/api/searchController.js" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/server/routes/api/searchController.js" />
+        <option value="$PROJECT_DIR$/server/.env" />
       </list>
     </option>
   </component>
@@ -313,12 +252,6 @@
               <item name="desafio" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="desafio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="desafio" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -372,7 +305,7 @@
       <option name="presentableId" value="Default" />
       <updated>1545217605803</updated>
       <workItem from="1545217607365" duration="66000" />
-      <workItem from="1545217674496" duration="144363000" />
+      <workItem from="1545217674496" duration="145760000" />
     </task>
     <task id="LOCAL-00001" summary="Add client files to project">
       <created>1546182273356</created>
@@ -416,18 +349,25 @@
       <option name="project" value="LOCAL" />
       <updated>1546182845353</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Redirect to error page">
+      <created>1546213483465</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1546213483465</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144429000" />
+    <option name="totallyTimeSpent" value="145826000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="821" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -440,7 +380,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32921812" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32921812" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32921812" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -458,16 +398,10 @@
     <MESSAGE value="Add server files to project" />
     <MESSAGE value="Add client files to project" />
     <MESSAGE value="Delete server files to project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete server files to project" />
+    <MESSAGE value="Redirect to error page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redirect to error page" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/Components/CityName.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -720,15 +654,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/client/src/assets/weatherIcons/01d.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/Components/CurrentWeather.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -737,24 +664,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
+    <entry file="file://$PROJECT_DIR$/client/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        <state relative-caret-position="75">
+          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="26" selection-end-column="26" />
+        <state relative-caret-position="210">
+          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/routes/api/searchController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+        <state relative-caret-position="22">
+          <caret line="36" column="76" selection-start-line="36" selection-start-column="76" selection-end-line="36" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="40" selection-start-column="40" selection-end-column="40" />
         </state>
       </provider>
     </entry>

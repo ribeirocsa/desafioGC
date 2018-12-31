@@ -33,10 +33,8 @@ module.exports = (app) => {
     app.get('/search-location-weather', (req, res) => {
 
         const API_KEY = process.env.API_KEY;
-        //const API_KEY = '';
         // build api URL with user city
         const baseUrl = 'http://api.openweathermap.org/data/2.5/weather?q=';
-        //const baseUrl = 'http://api.openwea7568thermap.org/data/weather?q=';
         const apiId = `&appid=${API_KEY}&units=metric`;
 
         const userLocation = (baseUrl, apiId, city) => {
