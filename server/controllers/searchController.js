@@ -94,20 +94,34 @@ module.exports = (app) => {
                 logger.error(util.format('Error on getting info for city %s. %s', city3, err));
             });
 
-        const combinedData = Promise.all([apiRequest1,apiRequest2,apiRequest3])
+        /*const fetchAPI = (apiUrl, requestNum, cityName) => {
+            fetch(apiUrl)
+                .then(res => res.json())
+                .then(data => {
+                    validateResponseError(requestNum, data.cod, data.message);
+                    logger.debug(util.format('Weather for city %s was correctly retrieved: %s', cityName, data.base));
+                    return data;
+                })
+                .catch(err => {
+                    logger.error(util.format('Error on getting info for city %s. %s', cityName, err));
+                });
+        };*/
+
+        const combinedData = Promise.all([
+            apiRequest1,
+            apiRequest2,
+            apiRequest3])
                     .then(function(values){
-                        combinedData["apiRequest1"] = values[0];
-                        combinedData["apiRequest2"] = values[1];
-                        combinedData["apiRequest3"] = values[2];
+                        combinedData["apiResponse1"] = values[0];
+                        combinedData["apiResponse2"] = values[1];
+                        combinedData["apiResponse3"] = values[2];
                         combinedData["city1"] = city1;
                         combinedData["city2"] = city2;
                         combinedData["city3"] = city3;
 
-
                         res.send( combinedData );
                 })
                 .catch(err => {
-                    //console.log('promise catch:' + err);
                     logger.error(util.format('Error on promise catch: %s', err));
 
                     res.redirect('/error');

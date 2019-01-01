@@ -14,10 +14,12 @@ require('./controllers/searchController')(app);
 const router = require('./controllers/searchController');
 
 app.listen(port, (err) => {
-    if (err) { console.log(err); }
-    console.log('Listening on port ' + port);
-    logger.info('Server started ');
+    if (err) {
+        console.log(err);
+        logger.error(util.format('Error starting service: %s', err));
 
+    }
+    logger.info('Server started on port ' + port);
 });
 
 

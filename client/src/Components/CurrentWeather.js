@@ -27,34 +27,33 @@ class CurrentWeather extends Component {
             .then(data => {
                 let invalidCities = [];
 
-                if(data.apiRequest1 == null || data.apiRequest2 == null || data.apiRequest3 == null){
+                if(data.apiResponse1 == null || data.apiResponse2 == null || data.apiResponse3 == null){
                     //if any of the responses is undefined, we want to redirect to error component
                     this.setState({
                         httpError: -1
                     });
                 }
                 else {
-
                     this.setState({
-                        httpError: data.apiRequest1.cod
+                        httpError: data.apiResponse1.cod
                     });
 
 
-                    if (data.apiRequest1.cod === '404') {
+                    if (data.apiResponse1.cod === '404') {
                         this.setState({
                             city1NotFound: '404'
                         });
                         invalidCities.push(data.city1);
                         console.log(`Error on getting info: the city ${data.city1} is invalid`);
                     }
-                    if (data.apiRequest2.cod === '404') {
+                    if (data.apiResponse2.cod === '404') {
                         this.setState({
                             city2NotFound: '404'
                         });
                         invalidCities.push(data.city2);
                         console.log(`Error on getting info: the city ${data.city2} is invalid`);
                     }
-                    if (data.apiRequest3.cod === '404') {
+                    if (data.apiResponse3.cod === '404') {
                         this.setState({
                             city3NotFound: '404'
                         });
@@ -90,9 +89,9 @@ class CurrentWeather extends Component {
                         };
 
                         const arrayCities = [
-                            createCity(data.apiRequest1),
-                            createCity(data.apiRequest2),
-                            createCity(data.apiRequest3)
+                            createCity(data.apiResponse1),
+                            createCity(data.apiResponse2),
+                            createCity(data.apiResponse3)
                         ];
 
                         this.setState({
@@ -184,7 +183,6 @@ class CurrentWeather extends Component {
                             style={{
                                 borderRadius: '5px'
                             }}
-
                         />
                     </div>
                     <div className="col-md-12 btn-center">
