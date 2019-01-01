@@ -1,4 +1,6 @@
 const fetch = require('node-fetch');
+const util = require('util');
+const logger = require('../utils/logger');
 
 module.exports = (app) => {
 
@@ -23,9 +25,12 @@ module.exports = (app) => {
     app.use(bodyParser.json());
 
     app.post('/search', (req, res) => {
+
         city1 = encodeURIComponent(req.body.city1.trim());
         city2 = encodeURIComponent(req.body.city2.trim());
         city3 = encodeURIComponent(req.body.city3.trim());
+
+        logger.info(util.format('Request received for: %s, %s, %s', city1, city2, city3));
 
         res.redirect('/current-weather');
     });
@@ -46,11 +51,10 @@ module.exports = (app) => {
         const apiUrl1 = userLocation(baseUrl, apiId, city1);
         const apiUrl2 = userLocation(baseUrl, apiId, city2);
         const apiUrl3 = userLocation(baseUrl, apiId, city3);
-        //const apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=df012e8d0c5edd089821d59c9556bb2e&units=metric';
 
         const validateResponseError = (requestNumber, responseCod, responseMessage) => {
             if (responseCod !== 200) {
-                console.log('Error on request' + requestNumber + ': ' + responseMessage);
+                logger.error(util.format('Error on request: %s, %s', requestNumber, responseMessage));
             }
 
         };
@@ -59,10 +63,11 @@ module.exports = (app) => {
             .then(res => res.json())
             .then(data => {
                 validateResponseError(1, data.cod, data.message);
+                logger.debug(util.format('Weather for city %s was correctly retrieved', city1));
                 return data;
             })
             .catch(err => {
-                console.log('catch1: '+ err);
+                logger.error(util.format('Error on getting info for city %s. %s', city1, err));
 
             });
 
@@ -71,20 +76,22 @@ module.exports = (app) => {
             .then(res => res.json())
             .then(data => {
                 validateResponseError(2, data.cod, data.message);
+                logger.debug(util.format('Weather for city %s was correctly retrieved', city2));
                 return data;
             })
             .catch(err => {
-                console.log('catch2: '+ err);
+                logger.error(util.format('Error on getting info for city %s. %s', city2, err));
             });
 
         const apiRequest3 = fetch(apiUrl3)
             .then(res => res.json())
             .then(data => {
                 validateResponseError(3, data.cod, data.message);
+                logger.debug(util.format('Weather for city %s was correctly retrieved', city3));
                 return data;
             })
             .catch(err => {
-                console.log('catch3: '+ err);
+                logger.error(util.format('Error on getting info for city %s. %s', city3, err));
             });
 
         const combinedData = Promise.all([apiRequest1,apiRequest2,apiRequest3])
@@ -100,17 +107,10 @@ module.exports = (app) => {
                         res.send( combinedData );
                 })
                 .catch(err => {
-                    console.log('promise catch:' + err);
+                    //console.log('promise catch:' + err);
+                    logger.error(util.format('Error on promise catch: %s', err));
 
                     res.redirect('/error');
                 });
-        /*process.on('unhandledRejection', (reason, combinedData) => {
-            console.log('Unhandled Rejection at:', reason.stack || reason)
-            // Recommended: send the information to sentry.io
-            // or whatever crash reporting service you use
-        });
-        combinedData.then((res) => {
-            return ('-----> ' + reportToUser(JSON.pasre(res))); // note the typo (`pasre`)
-        }); // no `.catch()` or `.then()`*/
     })
 };

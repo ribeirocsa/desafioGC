@@ -45,21 +45,21 @@ class CurrentWeather extends Component {
                             city1NotFound: '404'
                         });
                         invalidCities.push(data.city1);
-                        console.log(data.city1 + " is invalid");
+                        console.log(`Error on getting info: the city ${data.city1} is invalid`);
                     }
                     if (data.apiRequest2.cod === '404') {
                         this.setState({
                             city2NotFound: '404'
                         });
                         invalidCities.push(data.city2);
-                        console.log(data.city2 + " is invalid");
+                        console.log(`Error on getting info: the city ${data.city2} is invalid`);
                     }
                     if (data.apiRequest3.cod === '404') {
                         this.setState({
                             city3NotFound: '404'
                         });
                         invalidCities.push(data.city3);
-                        console.log(data.city3 + " is invalid");
+                        console.log(`Error on getting info: the city ${data.city3} is invalid`);
                     }
 
 
@@ -111,7 +111,7 @@ class CurrentWeather extends Component {
 
         //check if there was any error
         if ( this.state.httpError === 401 || this.state.httpError === 500 || this.state.httpError === -1) {
-            console.log("error has been triggered: " + this.state.httpError)
+            console.log("error has been triggered: " + this.state.httpError);
             return (
                 <div>
                     <ErrorComponent/>
