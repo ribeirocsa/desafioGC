@@ -16,7 +16,7 @@ const controller = require('../controllers/controller');
 //const searchControllerPOST = require('../controllers/searchPOST');
 //const searchControllerGET = require('../controllers/searchGET');
 
-const searchController = require('./api/searchController');
+const searchController = require('../controllers/searchController');
 
 router.get('/', (req, res) => {
     res.send({ express: 'Hello From Express' });
