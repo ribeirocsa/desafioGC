@@ -4,6 +4,7 @@ import './App.css';
 import Home from './Components/Home';
 import CurrentWeather from './Components/CurrentWeather';
 import ErrorComponent from "./Components/Error";
+import Loader from "./Components/loader";
 
 class App extends Component {
 
@@ -17,6 +18,7 @@ class App extends Component {
                         <Route exact path='/error' component={ErrorComponent}/>
 
                         <Route component={ErrorComponent} />
+                        <Route path='/loader' component={Loader} />
                     </Switch>
                 </div>
             </BrowserRouter>

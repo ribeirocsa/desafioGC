@@ -7,6 +7,7 @@ import Home from "./Home";
 import ErrorComponent from "./Error";
 import {Bar} from 'react-chartjs-2';
 import Chart from 'chart.js';
+import Loader from './loader';
 
 Chart.defaults.global.defaultFontColor = 'white';
 
@@ -20,14 +21,7 @@ class CurrentWeather extends Component {
             cityNotFound2: '',
             cityNotFound3: '',
             invalidCities: [],
-            httpError: '',
-            componentWidth: 450,
-            showToolTip: false,
-            top: '',
-            left: '',
-            y: '',
-            x: '',
-            dataDisplay: ''
+            httpError: ''
         };
     }
 
@@ -188,15 +182,15 @@ class CurrentWeather extends Component {
                         {
                             label: 'Temperature (ºC)',
                             backgroundColor: [
-                                'rgba(255,255,255,0.2)',
-                                'rgba(255,255,255,0.2)',
-                                'rgba(255,255,255,0.2)'
+                                'rgba(255,255,255,0.7)',
+                                'rgba(255,255,255,0.7)',
+                                'rgba(255,255,255,0.7)'
                             ],
                             borderColor: 'rgba(211,211,211,1)',
                             borderWidth: 1,
-                            hoverBorderWidth: 2,
-                            hoverBackgroundColor: 'rgba(128,128,128,0.4)',
-                            hoverBorderColor: 'rgba(211,211,211,1)',
+                            hoverBorderWidth: 3,
+                            hoverBackgroundColor: 'rgba(255,255,255,0.7)',
+                            hoverBorderColor: 'rgba(0,113,156,1)',
                             scaleFontColor: "#FFFFFF",
                             data: [cities[0].temp, cities[1].temp, cities[2].temp]
                         }
@@ -215,34 +209,37 @@ class CurrentWeather extends Component {
                 return (
                     <div>
                         <Home/>
-                        <div className='customTable mx-5 my-5'>
-                            <ReactTable
-                                data={cities}
-                                columns={columns}
-                                defaultSorted={[
-                                    {
-                                        id: "age",
-                                        desc: true
-                                    }
-                                ]}
-                                defaultPageSize={3}
-                                showPagination={false}
-                                style={{
-                                    borderRadius: '5px'
-                                }}
-                            />
+                        <div className='row'>
+                            <div className='customTable col-centered col-md-11 px-0 mb-5'>
+                                <ReactTable
+                                    data={cities}
+                                    columns={columns}
+                                    defaultSorted={[
+                                        {
+                                            id: "age",
+                                            desc: true
+                                        }
+                                    ]}
+                                    defaultPageSize={3}
+                                    showPagination={false}
+                                    style={{
+                                        borderRadius: '5px'
+                                    }}
+                                />
+                            </div>
                         </div>
 
 
-                        <div className='myChart mx-5 my-5'>
-                            <Bar
-                                data={data}
-                                options={{
-                                    chartOptions
-                                }}
-                            />
+                        <div className='row'>
+                            <div className='myChart col-centered'>
+                                <Bar
+                                    data={data}
+                                    options={{
+                                        chartOptions
+                                    }}
+                                />
+                            </div>
                         </div>
-
 
 
                         <div className="col-md-12 btn-center">
@@ -256,8 +253,8 @@ class CurrentWeather extends Component {
             else
             {
                 return (
-                    <div className="col-md-12 btn-center">
-                         Loading
+                    <div className="loader col-md-10 offset-md-5 my-5 py-5">
+                        <Loader type='spinningBubbles' color='#FFF'/>
                     </div>
                         );
             }

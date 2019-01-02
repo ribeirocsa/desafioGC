@@ -26,8 +26,13 @@ p {
   color: #FFF;
 }
 
-.searchCity {
+.myHeader {
   margin-top: 60px;
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
 }
 
 /* REACT-TABLE */
@@ -69,4 +74,10 @@ span.formErrorMessage {
 
 .myChart {
   width: 50%;
+}
+
+/* LOADER */
+
+.loader {
+  display: inline-flex;
 }
