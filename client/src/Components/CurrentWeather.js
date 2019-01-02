@@ -5,6 +5,10 @@ import 'react-table/react-table.css';
 import '../App.css';
 import Home from "./Home";
 import ErrorComponent from "./Error";
+import {Bar} from 'react-chartjs-2';
+import Chart from 'chart.js';
+
+Chart.defaults.global.defaultFontColor = 'white';
 
 class CurrentWeather extends Component {
     constructor(props) {
@@ -16,7 +20,14 @@ class CurrentWeather extends Component {
             cityNotFound2: '',
             cityNotFound3: '',
             invalidCities: [],
-            httpError: ''
+            httpError: '',
+            componentWidth: 450,
+            showToolTip: false,
+            top: '',
+            left: '',
+            y: '',
+            x: '',
+            dataDisplay: ''
         };
     }
 
@@ -139,59 +150,117 @@ class CurrentWeather extends Component {
         }
         else {
             const cities = this.state.cities;
+            if(cities.length>0) {
 
-            const columns = [
-                {
-                    Header: 'Name',
-                    accessor: 'name'
-                }, {
-                    Header: 'Temperature (°C)',
-                    accessor: 'temp',
-                    Cell: props => <span>{props.value}°</span>
-                }, {
-                    Header: 'Sunrise (GMT)',
-                    accessor: 'sunrise'
-                }, {
-                    Header: 'Sunset (GMT)',
-                    accessor: 'sunset'
-                }, {
-                    Header: 'Icon',
-                    accessor: 'icon',
-                    // Cell: props => <img src={`http://openweathermap.org/img/w/${props.value}.png`} alt='weather icon'></img>
-                    Cell: props => <img src={require(`../assets/weatherIcons/${props.value}.png`)} alt='weather icon'></img>
-                }, {
-                    Header: 'Description',
-                    accessor: 'description'
-                }
-            ];
 
-            return (
-                <div>
-                    <Home/>
-                    <div className='customTable mx-5 my-5'>
-                        <ReactTable
-                            data = {cities}
-                            columns = {columns}
-                            defaultSorted = {[
-                                {
-                                    id: "age",
-                                    desc: true
-                                }
-                            ]}
-                            defaultPageSize = {3}
-                            showPagination = {false}
-                            style={{
-                                borderRadius: '5px'
-                            }}
-                        />
+                // Table
+                const columns = [
+                    {
+                        Header: 'Name',
+                        accessor: 'name'
+                    }, {
+                        Header: 'Temperature (°C)',
+                        accessor: 'temp',
+                        Cell: props => <span>{props.value}°</span>
+                    }, {
+                        Header: 'Sunrise (GMT)',
+                        accessor: 'sunrise'
+                    }, {
+                        Header: 'Sunset (GMT)',
+                        accessor: 'sunset'
+                    }, {
+                        Header: 'Icon',
+                        accessor: 'icon',
+                        // Cell: props => <img src={`http://openweathermap.org/img/w/${props.value}.png`} alt='weather icon'></img>
+                        Cell: props => <img src={require(`../assets/weatherIcons/${props.value}.png`)}
+                                            alt='weather icon'></img>
+                    }, {
+                        Header: 'Description',
+                        accessor: 'description'
+                    }
+                ];
+
+
+                //Bar Chart
+                const data = {
+                    labels: [cities[0].name, cities[1].name, cities[2].name],
+                    datasets: [
+                        {
+                            label: 'Temperature (ºC)',
+                            backgroundColor: [
+                                'rgba(255,255,255,0.2)',
+                                'rgba(255,255,255,0.2)',
+                                'rgba(255,255,255,0.2)'
+                            ],
+                            borderColor: 'rgba(211,211,211,1)',
+                            borderWidth: 1,
+                            hoverBorderWidth: 2,
+                            hoverBackgroundColor: 'rgba(128,128,128,0.4)',
+                            hoverBorderColor: 'rgba(211,211,211,1)',
+                            scaleFontColor: "#FFFFFF",
+                            data: [cities[0].temp, cities[1].temp, cities[2].temp]
+                        }
+                    ]
+                };
+
+                const chartOptions = {
+                    xAxes: [{
+                        barPercentage: 0.1,
+                        categoryPercentage: .8
+                    }],
+                    responsive: true,
+                    maintainAspectRatio: false
+                };
+
+                return (
+                    <div>
+                        <Home/>
+                        <div className='customTable mx-5 my-5'>
+                            <ReactTable
+                                data={cities}
+                                columns={columns}
+                                defaultSorted={[
+                                    {
+                                        id: "age",
+                                        desc: true
+                                    }
+                                ]}
+                                defaultPageSize={3}
+                                showPagination={false}
+                                style={{
+                                    borderRadius: '5px'
+                                }}
+                            />
+                        </div>
+
+
+                        <div className='myChart mx-5 my-5'>
+                            <Bar
+                                data={data}
+                                options={{
+                                    chartOptions
+                                }}
+                            />
+                        </div>
+
+
+
+                        <div className="col-md-12 btn-center">
+                            <Link to="/">
+                                <button className='btn btn-outline-light mx-sm-3 mb-2 mt-5'>Go to home</button>
+                            </Link>
+                        </div>
                     </div>
+                );
+            }
+            else
+            {
+                return (
                     <div className="col-md-12 btn-center">
-                        <Link to="/">
-                            <button className='btn btn-outline-light mx-sm-3 mb-2 mt-5'>Go to home</button>
-                        </Link>
+                         Loading
                     </div>
-                </div>
-            );
+                        );
+            }
         }
     }
 }

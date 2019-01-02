@@ -64,3 +64,9 @@ span.formErrorMessage {
   position: absolute;
   top: 55px;
 }
+
+/* CHARt */
+
+.myChart {
+  width: 50%;
+}
